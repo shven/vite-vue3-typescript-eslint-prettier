@@ -1,38 +1,50 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue';
-import Title from './components/title/Title.vue';
+import { RouterView } from 'vue-router';
+import { ref, onMounted } from 'vue';
+import Footer from './components/footer/Footer.vue';
+import Header from './components/header/Header.vue';
+const isScrolled = ref(false);
+
+onMounted(() => {
+    window.addEventListener('scroll', () => {
+        isScrolled.value = window.scrollY > 1;
+    });
+});
 </script>
 
 <template>
-    <div>
-        <a href="https://vitejs.dev" target="_blank">
-            <img src="/vite.svg" class="logo" alt="Vite logo" />
-        </a>
-        <a href="https://vuejs.org/" target="_blank">
-            <img src="./assets/vue.svg" class="logo vue" />
-        </a>
+    <div class="page" :class="{ 'page--scrolled': isScrolled }">
+        <header class="page__header">
+            <Header />
+        </header>
+        <main class="page__main">
+            <RouterView />
+        </main>
+        <footer class="page__footer">
+            <Footer />
+        </footer>
     </div>
-
-    <HelloWorld msg="Vite + Vue" />
-
-    <Title level="h1" size="large" label="Large heading 1" />
-    <Title level="h2" size="large" label="Large heading 2" />
-    <Title level="h3" size="large" label="Large heading 3" />
-    <Title level="h2" size="medium" label="Medium heading 2" />
-    <Title level="h2" size="tiny" label="Small heading 2" />
 </template>
 
 <style scoped>
-.logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-    transition: filter 300ms;
+.page {
+    min-height: 100dvh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 100%;
 }
-.logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
+.page__header {
+    position: sticky;
+    z-index: 10;
+    top: 0;
+    margin-block-end: 1rem;
+    padding-block: 1rem;
+    border-bottom: 1px solid transparent;
+    transition: 0.35s ease border-color;
 }
-.logo.vue:hover {
-    filter: drop-shadow(0 0 2em #42b883aa);
+
+.page--scrolled .page__header {
+    background: var(--color--black);
+    border-bottom: 1px solid var(--color--gray-dark);
 }
 </style>

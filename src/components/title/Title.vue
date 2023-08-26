@@ -20,7 +20,9 @@ const classes = computed(() => {
 .title {
     line-height: 1;
     text-wrap: balance;
+    margin-block-end: 1rem;
 }
+
 /* Title sizes */
 .title--tiny {
     font-size: var(--font-size-tiny);

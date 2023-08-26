@@ -13,7 +13,8 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "vue": "^3.3.4"
+    "vue": "^3.3.4",
+    "vue-router": "4"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.3.2",
