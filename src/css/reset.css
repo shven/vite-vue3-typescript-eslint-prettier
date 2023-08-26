@@ -1,0 +1,31 @@
+/* 
+ * Fluid type scale
+ * https://www.fluid-type-scale.com/calculate?minFontSize=16&minWidth=320&minRatio=1.25&maxFontSize=20&maxWidth=1440&maxRatio=1.4&steps=tiny%2Csmall%2Cmedium%2Clarge%2Chuge%2Cgigantic%2Cenormous&baseStep=medium&prefix=font-size&decimals=3&useRems=on&remValue=16&previewFont=Inter&previewText=Almost+before+we+knew+it%2C+we+had+left+the+ground&previewWidth=1920
+ */
+:root {
+    --font-size-tiny: clamp(0.8rem, 0.13vw + 0.77rem, 0.89rem);
+    --font-size-small: clamp(1rem, 0.36vw + 0.93rem, 1.25rem);
+    --font-size-medium: clamp(1.25rem, 0.71vw + 1.11rem, 1.75rem);
+    --font-size-large: clamp(1.56rem, 1.27vw + 1.31rem, 2.45rem);
+    --font-size-huge: clamp(1.95rem, 2.11vw + 1.53rem, 3.43rem);
+    --font-size-gigantic: clamp(2.44rem, 3.37vw + 1.77rem, 4.8rem);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        color: #fff;
+    }
+}

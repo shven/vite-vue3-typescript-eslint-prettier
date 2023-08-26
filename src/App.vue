@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue';
+import Title from './components/title/Title.vue';
 </script>
 
 <template>
@@ -13,6 +14,12 @@ import HelloWorld from './components/HelloWorld.vue';
     </div>
 
     <HelloWorld msg="Vite + Vue" />
+
+    <Title level="h1" size="large" label="Large heading 1" />
+    <Title level="h2" size="large" label="Large heading 2" />
+    <Title level="h3" size="large" label="Large heading 3" />
+    <Title level="h2" size="medium" label="Medium heading 2" />
+    <Title level="h2" size="tiny" label="Small heading 2" />
 </template>
 
 <style scoped>

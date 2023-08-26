@@ -1,20 +1,22 @@
 <template>
-    <button
-        type="button"
-        class="button"
-        :class="{
-            [`button--${props.type}`]: true,
-            [`button--${props.size}`]: true
-        }"
-        @click="onClick">
+    <button type="button" :class="classes" @click="onClick">
         {{ label }}
     </button>
 </template>
 
 <script lang="ts" setup>
+import { computed } from 'vue';
 import { ButtonPropsType } from './Button.constants';
 
 const props = withDefaults(defineProps<ButtonPropsType>(), { size: 'medium' });
+
+const classes = computed(() => {
+    return {
+        button: true,
+        [`button--${props.type}`]: true,
+        [`button--${props.size}`]: true
+    };
+});
 
 const emit = defineEmits<{
     (e: 'click', id: number): void;
