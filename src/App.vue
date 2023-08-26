@@ -47,4 +47,9 @@ onMounted(() => {
     background: var(--color--black);
     border-bottom: 1px solid var(--color--gray-dark);
 }
+
+.page__footer {
+    border-top: 1px solid var(--color--gray);
+    background: var(--color--gray-dark);
+}
 </style>

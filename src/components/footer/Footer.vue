@@ -22,7 +22,6 @@ import Container from '../container/Container.vue';
     justify-content: center;
     gap: 1rem;
     padding-block: 1rem;
-    border-top: 1px solid var(--color--gray);
 }
 .footer__image {
     height: 2em;
