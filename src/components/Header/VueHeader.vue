@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import Container from '../container/Container.vue';
+import VueContainer from '../Container/VueContainer.vue';
 </script>
 <template>
     <div class="header">
-        <Container>
+        <VueContainer>
             <div class="header__content">
                 <nav class="header__nav">
                     <RouterLink to="/">Home</RouterLink>
@@ -11,7 +11,7 @@ import Container from '../container/Container.vue';
                     <RouterLink to="/movies">Movies</RouterLink>
                 </nav>
             </div>
-        </Container>
+        </VueContainer>
     </div>
 </template>
 

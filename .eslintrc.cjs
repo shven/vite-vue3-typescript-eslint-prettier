@@ -25,7 +25,6 @@ module.exports = {
     rules: {
         'vue/component-api-style': ['error', ['script-setup']], // Use script setup
         'vue/component-name-in-template-casing': ['error', 'PascalCase'], // PascalCase component names
-        'vue/multi-word-component-names': 'off',
         'vue/v-for-delimiter-style': ['error', 'in'], // Use 'in' delimiter for v-for
         radix: ['error', 'always'], // Enforce radix when using parseInt()
         curly: 1, // Enforce curly braces for control statements

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Title from '../title/Title.vue';
+import VueTitle from '../Title/VueTitle.vue';
 import { CardPropsType } from './Card.types';
 withDefaults(defineProps<CardPropsType>(), { title: 'Title', subTitle: 'Sub title', image: 'default' });
 </script>
@@ -7,7 +7,7 @@ withDefaults(defineProps<CardPropsType>(), { title: 'Title', subTitle: 'Sub titl
 <template>
     <div class="card">
         <img :src="image" class="card__image" :alt="`${title} poster`" />
-        <Title :label="title" size="small" />
+        <VueTitle :label="title" size="small" />
         <p>{{ subTitle }}</p>
         <p v-if="tag">{{ tag }}</p>
     </div>

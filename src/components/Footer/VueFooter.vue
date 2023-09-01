@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import Container from '../container/Container.vue';
+import VueContainer from '../Container/VueContainer.vue';
 </script>
 <template>
     <div class="footer">
-        <Container>
+        <VueContainer>
             <div class="footer__content">
                 <a href="https://vitejs.dev" target="_blank" class="footer__logo">
                     <img src="/vite.svg" class="footer__image" alt="Vite logo" />
@@ -12,7 +12,7 @@ import Container from '../container/Container.vue';
                     <img src="/vue.svg" class="footer__image footer__image--vue" alt="Vue logo" />
                 </a>
             </div>
-        </Container>
+        </VueContainer>
     </div>
 </template>
 

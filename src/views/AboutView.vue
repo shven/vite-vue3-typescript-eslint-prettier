@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import Container from '../components/container/Container.vue';
-import Title from '../components/title/Title.vue';
+import VueContainer from '../components/Container/VueContainer.vue';
+import VueTitle from '../components/Title/VueTitle.vue';
 </script>
 <template>
     <div class="about">
-        <Container>
-            <Title label="About" level="h1" size="large" />
+        <VueContainer>
+            <VueTitle label="About" level="h1" size="large" />
 
             <p>
                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean
@@ -47,6 +47,6 @@ import Title from '../components/title/Title.vue';
                 ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh.
                 Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
             </p>
-        </Container>
+        </VueContainer>
     </div>
 </template>

@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { Ref, ref } from 'vue';
-import Card from '../components/Card/Card.vue';
-import Container from '../components/container/Container.vue';
-import Title from '../components/title/Title.vue';
+import VueCard from '../components/Card/VueCard.vue';
+import VueContainer from '../components/Container/VueContainer.vue';
+import VueTitle from '../components/Title/VueTitle.vue';
 
 type Movie = {
     Title: string;
@@ -37,10 +37,10 @@ fetch('/movies.json')
 </script>
 <template>
     <div class="movies">
-        <Container>
-            <Title label="Movies" level="h1" size="large" />
+        <VueContainer>
+            <VueTitle label="Movies" level="h1" size="large" />
             <div class="movies__cards">
-                <Card
+                <VueCard
                     v-for="movie in movies"
                     :key="movie.imdbID"
                     :image="movie.Poster"
@@ -48,7 +48,7 @@ fetch('/movies.json')
                     :sub-title="movie.Genre"
                     :tag="movie.Year" />
             </div>
-        </Container>
+        </VueContainer>
     </div>
 </template>
 <style scoped>
