@@ -1,5 +1,5 @@
 <script setup lang="ts">
-defineProps<{ text: string }>();
+defineProps<{ text: string | undefined }>();
 </script>
 <template>
     <div v-if="text" class="tag">{{ text }}</div>

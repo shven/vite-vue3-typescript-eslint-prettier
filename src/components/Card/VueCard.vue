@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import VueIcon from '../Icon/VueIcon.vue';
 import VueTag from '../Tag/VueTag.vue';
 import VueTitle from '../Title/VueTitle.vue';
 import { CardPropsType } from './Card.types';
@@ -12,6 +13,7 @@ withDefaults(defineProps<CardPropsType>(), { title: 'Title', subTitle: 'Sub titl
             <VueTitle :label="title" size="small" />
             <VueTag :text="tag" />
         </header>
+        <VueIcon name="Map" />
         <p>{{ subTitle }}</p>
     </article>
 </template>
