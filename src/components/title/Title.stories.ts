@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 
-import { titleLevels, titleSizes } from './Title.constants';
-import Title from './Title.vue';
+import Title from './VueTitle.vue';
+import { titleSizes, titleLevels } from './Title';
 
 // More on how to set up stories at: https://storybook.js.org/docs/vue/writing-stories/introduction
 const meta = {
