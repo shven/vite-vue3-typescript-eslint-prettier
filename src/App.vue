@@ -1,8 +1,8 @@
 <script setup lang="ts">
+import { onMounted, ref } from 'vue';
 import { RouterView } from 'vue-router';
-import { ref, onMounted } from 'vue';
-import Footer from './components/footer/Footer.vue';
-import Header from './components/header/Header.vue';
+import VueFooter from './components/Footer/VueFooter.vue';
+import VueHeader from './components/Header/VueHeader.vue';
 const isScrolled = ref(false);
 
 onMounted(() => {
@@ -15,13 +15,13 @@ onMounted(() => {
 <template>
     <div class="page" :class="{ 'page--scrolled': isScrolled }">
         <header class="page__header">
-            <Header />
+            <VueHeader />
         </header>
         <main class="page__main">
             <RouterView />
         </main>
         <footer class="page__footer">
-            <Footer />
+            <VueFooter />
         </footer>
     </div>
 </template>

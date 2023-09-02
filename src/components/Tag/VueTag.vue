@@ -1,0 +1,14 @@
+<script setup lang="ts">
+defineProps<{ text: string }>();
+</script>
+<template>
+    <div v-if="text" class="tag">{{ text }}</div>
+</template>
+<style scoped>
+.tag {
+    border: 1px solid var(--color--white);
+    border-radius: 50px;
+    padding: 0.25rem 1rem;
+    white-space: nowrap;
+}
+</style>

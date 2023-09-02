@@ -1,16 +1,19 @@
 <script setup lang="ts">
+import VueTag from '../Tag/VueTag.vue';
 import VueTitle from '../Title/VueTitle.vue';
 import { CardPropsType } from './Card.types';
 withDefaults(defineProps<CardPropsType>(), { title: 'Title', subTitle: 'Sub title', image: 'default' });
 </script>
 
 <template>
-    <div class="card">
+    <article class="card">
         <img :src="image" class="card__image" :alt="`${title} poster`" />
-        <VueTitle :label="title" size="small" />
+        <header class="card__header">
+            <VueTitle :label="title" size="small" />
+            <VueTag :text="tag" />
+        </header>
         <p>{{ subTitle }}</p>
-        <p v-if="tag">{{ tag }}</p>
-    </div>
+    </article>
 </template>
 
 <style scoped>
@@ -20,5 +23,13 @@ withDefaults(defineProps<CardPropsType>(), { title: 'Title', subTitle: 'Sub titl
 }
 .card__image {
     width: 100%;
+}
+
+.card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 1rem;
+    gap: 1rem;
 }
 </style>
