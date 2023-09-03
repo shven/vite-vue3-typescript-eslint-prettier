@@ -37,6 +37,8 @@ $code-block--height: 30px;
     position: relative;
     display: grid;
     margin-bottom: 1rem;
+    border-radius: 5px;
+    overflow: hidden;
 }
 .code-block__code {
     border-radius: 3px;
@@ -44,10 +46,11 @@ $code-block--height: 30px;
     padding: 0 3px;
     display: block;
     padding: 40px 10px 10px 10px;
-    border-radius: 5px;
     color: var(--color--white);
     border: 3px solid var(--color--secondary);
     background: rgba(0, 0, 0, 0.5);
+    white-space: pre-wrap;
+    font-size: var(--font-size--tiny);
 
     &:before {
         left: 0;
