@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import VueContainer from '../components/Container/VueContainer.vue';
 import VueTitle from '../components/Title2/VueTitle.vue';
-import VueHelloWorld from '../components/VueHelloWorld.vue';
 </script>
-
 <template>
-    <div>
+    <div class="about">
         <VueContainer>
-            <VueTitle label="Home" level="h1" size="large" />
-            <VueHelloWorld msg="Vite + Vue" />
+            <VueTitle label="Components" level="h1" size="large" />
+            <ul>
+                <li><RouterLink to="/components/icons">Icons</RouterLink></li>
+            </ul>
         </VueContainer>
     </div>
 </template>

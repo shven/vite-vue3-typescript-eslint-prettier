@@ -8,6 +8,7 @@ import VueContainer from '../Container/VueContainer.vue';
                 <nav class="header__nav">
                     <RouterLink to="/">Home</RouterLink>
                     <RouterLink to="/about">About</RouterLink>
+                    <RouterLink to="/components">Components</RouterLink>
                     <RouterLink to="/movies">Movies</RouterLink>
                 </nav>
             </div>
