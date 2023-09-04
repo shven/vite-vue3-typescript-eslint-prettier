@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import VueContainer from '../components/Container/VueContainer.vue';
-import VueTitle from '../components/Title2/VueTitle.vue';
+import VueTitle from '../components/Title/VueTitle.vue';
 </script>
 <template>
     <div class="about">

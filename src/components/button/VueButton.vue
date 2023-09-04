@@ -38,11 +38,11 @@ const onClick = (): void => {
 }
 .button--primary {
     color: white;
-    background-color: red;
+    background-color: var(--color--primary);
 }
 .button--secondary {
     color: white;
-    background-color: blue;
+    background-color: var(--color--secondary);
 }
 .button--small {
     font-size: 12px;

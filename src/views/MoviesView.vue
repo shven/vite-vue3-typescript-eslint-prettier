@@ -2,7 +2,7 @@
 import { Ref, ref } from 'vue';
 import VueCard from '../components/Card/VueCard.vue';
 import VueContainer from '../components/Container/VueContainer.vue';
-import VueTitle from '../components/Title2/VueTitle.vue';
+import VueTitle from '../components/Title/VueTitle.vue';
 
 type Movie = {
     Title: string;

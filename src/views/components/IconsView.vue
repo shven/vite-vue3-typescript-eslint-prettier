@@ -6,7 +6,7 @@ import { iconSizes } from '../../components/Icon/Icon.constants';
 import { iconNames } from '../../components/Icon/Icon.constants.generated';
 import { IconNameType, IconSizeType } from '../../components/Icon/IconTypes';
 import VueIcon from '../../components/Icon/VueIcon.vue';
-import VueTitle from '../../components/Title2/VueTitle.vue';
+import VueTitle from '../../components/Title/VueTitle.vue';
 
 const iconSize: Ref<IconSizeType> = ref(iconSizes[0]);
 const iconName: Ref<IconNameType> = ref(iconNames[0]);

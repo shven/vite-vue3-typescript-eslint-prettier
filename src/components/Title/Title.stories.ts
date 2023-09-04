@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
-
+import { titleLevels, titleSizes } from './Title';
 import Title from './VueTitle.vue';
-import { titleSizes, titleLevels } from './Title';
 
 // More on how to set up stories at: https://storybook.js.org/docs/vue/writing-stories/introduction
 const meta = {
@@ -17,15 +16,43 @@ const meta = {
 
 export default meta;
 type Story = StoryObj<typeof meta>;
-/*
- *👇 Render functions are a framework specific feature to allow you control on how the component renders.
- * See https://storybook.js.org/docs/vue/api/csf
- * to learn how to use render functions.
- */
+
+export const TinyTitle: Story = {
+    args: {
+        size: 'tiny',
+        level: 'h2',
+        label: 'Tiny title'
+    }
+};
+
+export const SmallTitle: Story = {
+    args: {
+        size: 'small',
+        level: 'h2',
+        label: 'Small title'
+    }
+};
+
 export const MediumTitle: Story = {
     args: {
         size: 'medium',
         level: 'h2',
-        label: 'Title'
+        label: 'Medium title'
+    }
+};
+
+export const LargeTitle: Story = {
+    args: {
+        size: 'large',
+        level: 'h2',
+        label: 'Large title'
+    }
+};
+
+export const HugeTitle: Story = {
+    args: {
+        size: 'huge',
+        level: 'h2',
+        label: 'HugeTitle'
     }
 };
