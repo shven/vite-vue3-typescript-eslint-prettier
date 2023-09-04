@@ -21,7 +21,7 @@ type Story = StoryObj<typeof meta>;
 export const SmallIcon: Story = {
     args: {
         size: 'small',
-        name: 'facebook'
+        name: 'cart'
     }
 };
 
@@ -35,6 +35,6 @@ export const MediumIcon: Story = {
 export const LargeIcon: Story = {
     args: {
         size: 'large',
-        name: 'facebook'
+        name: 'map'
     }
 };
