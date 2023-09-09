@@ -7,7 +7,7 @@ withDefaults(defineProps<CardPropsType>(), { title: 'Title', subTitle: 'Sub titl
 
 <template>
     <article class="card">
-        <img :src="image" class="card__image" :alt="`${title} poster`" />
+        <img v-lazy-load="image" class="card__image" :alt="`${title} poster`" />
         <header class="card__header">
             <VueTitle :label="title" size="small" />
             <VueTag :text="tag" />
@@ -23,6 +23,14 @@ withDefaults(defineProps<CardPropsType>(), { title: 'Title', subTitle: 'Sub titl
 }
 .card__image {
     width: 100%;
+    aspect-ratio: 10 / 16;
+    object-fit: contain;
+    opacity: 0;
+    transition: 1s ease opacity;
+
+    &[src] {
+        opacity: 1;
+    }
 }
 
 .card__header {
