@@ -1,45 +1,24 @@
 <script setup lang="ts">
-import { Ref, ref } from 'vue';
+import { ref, watch } from 'vue';
 import VueCard from '../components/Card/VueCard.vue';
 import VueContainer from '../components/Container/VueContainer.vue';
 import VueTitle from '../components/Title/VueTitle.vue';
+import useApi from '../composables/useApi';
+const { movies, search, error, loading } = useApi('/movies.json');
 
-type Movie = {
-    Title: string;
-    Year?: string;
-    Rated: string;
-    Released: string;
-    Runtime: string;
-    Genre: string;
-    Director: string;
-    Writer: string;
-    Actors: string;
-    Plot: string;
-    Language: string;
-    Country: string;
-    Awards: string;
-    Poster: string;
-    Metascore: string;
-    imdbRating: string;
-    imdbVotes: string;
-    imdbID: string;
-    Type: string;
-    Response: string;
-    Images: string[];
-};
-const movies: Ref<Movie[] | null> = ref(null);
-
-fetch('/movies.json')
-    .then((response) => response.json())
-    .then((data) => {
-        movies.value = data;
-    });
+const titleSearch = ref('');
+watch(titleSearch, (t) => {
+    search(t);
+});
 </script>
 <template>
     <div class="movies">
         <VueContainer>
             <VueTitle label="Movies" level="h1" size="large" />
-            <div class="movies__cards">
+            <input v-model="titleSearch" type="text" />
+            <div v-if="loading">Loading...</div>
+            <div v-else-if="error">Error while loading movies</div>
+            <div v-else-if="movies" class="movies__cards">
                 <VueCard
                     v-for="movie in movies"
                     :key="movie.imdbID"

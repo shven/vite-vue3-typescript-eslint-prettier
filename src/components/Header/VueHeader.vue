@@ -10,6 +10,7 @@ import VueContainer from '../Container/VueContainer.vue';
                     <RouterLink to="/about">About</RouterLink>
                     <RouterLink to="/components">Components</RouterLink>
                     <RouterLink to="/movies">Movies</RouterLink>
+                    <RouterLink to="/photos">Photos</RouterLink>
                 </nav>
             </div>
         </VueContainer>

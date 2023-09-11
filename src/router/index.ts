@@ -47,6 +47,14 @@ const router = createRouter({
                 title: 'Movies'
             },
             component: (): Promise<Component> => import('../views/MoviesView.vue')
+        },
+        {
+            path: '/photos',
+            name: 'photos',
+            meta: {
+                title: 'Photos'
+            },
+            component: (): Promise<Component> => import('../views/PhotosView.vue')
         }
     ]
 });
