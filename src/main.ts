@@ -2,8 +2,10 @@ import { createApp } from 'vue';
 import App from './App.vue';
 import './css/reset.scss';
 import router from './router';
+import { createPinia } from 'pinia';
 
 const app = createApp(App);
+const pinia = createPinia();
 
 // vue router
 app.use(router);
@@ -26,6 +28,9 @@ app.directive('lazyLoad', (el, binding) => {
 
     observer.observe(el);
 });
+
+// pinia
+app.use(pinia);
 
 // mount vue on div#app
 app.mount('#app');

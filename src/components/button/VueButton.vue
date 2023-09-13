@@ -6,9 +6,9 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue';
-import { ButtonPropsType } from './Button.constants';
+import { ButtonPropsType, buttonSizes, buttonStyles } from './Button.constants';
 
-const props = withDefaults(defineProps<ButtonPropsType>(), { size: 'medium' });
+const props = withDefaults(defineProps<ButtonPropsType>(), { size: buttonSizes[0], type: buttonStyles[0] });
 
 const classes = computed(() => {
     return {
