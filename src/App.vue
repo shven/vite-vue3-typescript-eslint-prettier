@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
 import { RouterView } from 'vue-router';
-import VueFooter from './components/Footer/VueFooter.vue';
-import VueHeader from './components/Header/VueHeader.vue';
+import VueFooter from '@/components/Footer/VueFooter.vue';
+import VueHeader from '@/components/Header/VueHeader.vue';
 const isScrolled = ref(false);
 
 onMounted(() => {

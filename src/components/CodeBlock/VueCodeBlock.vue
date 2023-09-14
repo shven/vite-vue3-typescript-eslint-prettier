@@ -1,6 +1,6 @@
 <script setup lang="ts">
+import VueIcon from '@/components/Icon/VueIcon.vue';
 import { ref } from 'vue';
-import VueIcon from '../Icon/VueIcon.vue';
 const codeRef = ref();
 const copied = ref(false);
 async function copyToClipboard(): Promise<void> {

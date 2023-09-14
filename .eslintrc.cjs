@@ -21,7 +21,7 @@ module.exports = {
         extraFileExtensions: ['.vue'], // Additional file extensions
         ignorePatterns: ['.eslintrc.cjs']
     },
-    plugins: ['vue', '@typescript-eslint', 'prettier', 'unused-imports'],
+    plugins: ['no-relative-import-paths', 'vue', '@typescript-eslint', 'prettier', 'unused-imports'],
     rules: {
         'vue/component-api-style': ['error', ['script-setup']], // Use script setup
         'vue/component-name-in-template-casing': ['error', 'PascalCase'], // PascalCase component names
@@ -43,6 +43,10 @@ module.exports = {
         'no-var': 2, // Disallow 'var' keyword
         'prettier/prettier': 'warn', // Integrate Prettier and warn about style discrepancies
         'no-void': ['error', { allowAsStatement: true }], // Disallow 'void' operator, except as a statement
+        'no-relative-import-paths/no-relative-import-paths': [
+            'warn',
+            { allowSameFolder: true, rootDir: 'src', prefix: '@' }
+        ], // No relative imports
 
         // Find and remove unused ES6 module imports.
         'no-unused-vars': 'off', // Disable ESLint's 'no-unused-vars'

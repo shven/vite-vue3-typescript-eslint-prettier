@@ -13,6 +13,9 @@
         "allowImportingTsExtensions": true, // Allows importing TypeScript files with `.ts` extension.
         "isolatedModules": true, // Enforces stricter module boundaries by treating each file as a separate module.
         "useDefineForClassFields": true, // Allows initializing class fields directly within the class body without a constructor.
+        "paths": {
+            "@/*": ["src/*"]
+        },
 
         /* Linting */
         "noUnusedLocals": true, // Reports unused local variables as errors.

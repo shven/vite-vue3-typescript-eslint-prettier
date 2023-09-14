@@ -1,3 +1,5 @@
+import { buttonSizes, buttonStyles } from '@/constants';
+
 export type Photo = {
     albumId: number;
     id: number;
@@ -21,4 +23,12 @@ export type Movie = {
     posterurl: string;
     id: number;
     title: string;
+};
+
+export type ButtonSizeType = (typeof buttonSizes)[number] | string;
+export type ButtonStyleType = (typeof buttonStyles)[number] | string;
+export type ButtonPropsType = {
+    label: string;
+    type: ButtonStyleType;
+    size?: ButtonSizeType;
 };

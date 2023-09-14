@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import VueContainer from '../components/Container/VueContainer.vue';
-import VueCounter from '../components/Counter/VueCounter.vue';
-import VueTitle from '../components/Title/VueTitle.vue';
+import VueContainer from '@/components/Container/VueContainer.vue';
+import VueCounter from '@/components/Counter/VueCounter.vue';
+import VueTitle from '@/components/Title/VueTitle.vue';
 </script>
 
 <template>

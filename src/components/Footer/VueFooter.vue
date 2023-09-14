@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import VueContainer from '../Container/VueContainer.vue';
+import VueContainer from '@/components/Container/VueContainer.vue';
 </script>
 <template>
     <div class="footer">

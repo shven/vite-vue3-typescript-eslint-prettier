@@ -1,8 +1,8 @@
 <script setup lang="ts">
+import VueButton from '@/components/Button/VueButton.vue';
+import VueTitle from '@/components/Title/VueTitle.vue';
+import { useCounterStore } from '@/stores/counter';
 import { onMounted, onUnmounted } from 'vue';
-import { useCounterStore } from '../../stores/counter';
-import VueButton from '../Button/VueButton.vue';
-import VueTitle from '../Title/VueTitle.vue';
 
 const store = useCounterStore();
 let interval: ReturnType<typeof setInterval>;

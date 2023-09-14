@@ -1,5 +1,5 @@
+import type { Movie } from '@/types';
 import { defineStore } from 'pinia';
-import type { Movie } from 'src/composables/useApi';
 import { computed, ref } from 'vue';
 
 export const useMovieStore = defineStore('movie', () => {
