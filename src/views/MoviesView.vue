@@ -1,26 +1,21 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue';
+import { useMovieStore } from '../../src/stores/movie';
 import VueCard from '../components/Card/VueCard.vue';
 import VueContainer from '../components/Container/VueContainer.vue';
 import VueTitle from '../components/Title/VueTitle.vue';
-import useApi from '../composables/useApi';
-const { movies, search, error, loading } = useApi('/movies.json');
-
-const titleSearch = ref('');
-watch(titleSearch, (t) => {
-    search(t);
-});
+const store = useMovieStore();
+store.fetchData();
 </script>
 <template>
     <div class="movies">
         <VueContainer>
             <VueTitle label="Movies" level="h1" size="large" />
-            <input v-model="titleSearch" type="text" />
-            <div v-if="loading">Loading...</div>
-            <div v-else-if="error">{{ error }}</div>
-            <div v-else-if="movies" class="movies__cards">
+            <input v-model="store.searchTitle" type="text" />
+            <div v-if="store.loading">Loading...</div>
+            <div v-else-if="store.error">{{ store.error }}</div>
+            <div v-else-if="store.movies" class="movies__cards">
                 <VueCard
-                    v-for="movie in movies"
+                    v-for="movie in store.movies"
                     :key="movie.id"
                     :image="movie.posterurl"
                     :title="movie.title"
