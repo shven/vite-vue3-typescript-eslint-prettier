@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { Ref, ref } from 'vue';
+import { ref, type Ref } from 'vue';
 import VueCodeBlock from '../../components/CodeBlock/VueCodeBlock.vue';
 import VueContainer from '../../components/Container/VueContainer.vue';
 import { iconSizes } from '../../components/Icon/Icon.constants';
 import { iconNames } from '../../components/Icon/Icon.constants.generated';
-import { IconNameType, IconSizeType } from '../../components/Icon/IconTypes';
+import type { IconNameType, IconSizeType } from '../../components/Icon/IconTypes';
 import VueIcon from '../../components/Icon/VueIcon.vue';
 import VueTitle from '../../components/Title/VueTitle.vue';
 

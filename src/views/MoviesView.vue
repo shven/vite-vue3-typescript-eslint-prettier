@@ -17,15 +17,15 @@ watch(titleSearch, (t) => {
             <VueTitle label="Movies" level="h1" size="large" />
             <input v-model="titleSearch" type="text" />
             <div v-if="loading">Loading...</div>
-            <div v-else-if="error">Error while loading movies</div>
+            <div v-else-if="error">{{ error }}</div>
             <div v-else-if="movies" class="movies__cards">
                 <VueCard
                     v-for="movie in movies"
-                    :key="movie.imdbID"
-                    :image="movie.Poster"
-                    :title="movie.Title"
-                    :sub-title="movie.Genre"
-                    :tag="movie.Year" />
+                    :key="movie.id"
+                    :image="movie.posterurl"
+                    :title="movie.title"
+                    :sub-title="movie.genres[0]"
+                    :tag="movie.year" />
             </div>
         </VueContainer>
     </div>

@@ -1,4 +1,4 @@
-import { ComputedRef, Ref, computed, onMounted, ref } from 'vue';
+import { computed, onMounted, ref, type ComputedRef, type Ref } from 'vue';
 
 export type Photo = {
     albumId: number;
@@ -9,27 +9,20 @@ export type Photo = {
 };
 
 export type Movie = {
-    Title: string;
-    Year?: string;
-    Rated: string;
-    Released: string;
-    Runtime: string;
-    Genre: string;
-    Director: string;
-    Writer: string;
-    Actors: string;
-    Plot: string;
-    Language: string;
-    Country: string;
-    Awards: string;
-    Poster: string;
-    Metascore: string;
-    imdbRating: string;
-    imdbVotes: string;
-    imdbID: string;
-    Type: string;
-    Response: string;
-    Images: string[];
+    year: string;
+    genres: string[];
+    ratings: number[];
+    poster: string;
+    contentRating: string;
+    duration: string;
+    releaseDate: string;
+    averageRating: number;
+    storyline: string;
+    actors: string[];
+    imdbRating: number;
+    posterurl: string;
+    id: number;
+    title: string;
 };
 
 export default (
@@ -54,7 +47,7 @@ export default (
     const movies = computed(() => {
         const m = data.value as Movie[];
         if (searchTitle.value) {
-            return m.filter((movie) => movie.Title.toLowerCase().includes(searchTitle.value.toLowerCase()));
+            return m.filter((movie) => movie.title.toLowerCase().includes(searchTitle.value.toLowerCase()));
         } else {
             return m;
         }
@@ -73,13 +66,19 @@ export default (
                 throw new Error('Network response was not ok');
             }
             const jsonData = await response.json();
-            if (jsonData[0]?.imdbID) {
+            if (jsonData[0]?.posterurl) {
                 data.value = jsonData as Movie[];
             } else if (jsonData[0]?.albumId) {
                 data.value = jsonData as Photo[];
+            } else {
+                throw new Error('Something went wrong');
             }
         } catch (e) {
-            error.value = (e as Error).message;
+            if (typeof e === 'string') {
+                error.value = e;
+            } else {
+                error.value = (e as Error).message;
+            }
         } finally {
             loading.value = false;
         }

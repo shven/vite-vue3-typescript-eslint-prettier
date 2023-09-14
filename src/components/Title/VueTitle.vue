@@ -4,7 +4,7 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue';
-import { TitleProps } from './Title';
+import type { TitleProps } from './Title';
 
 const props = withDefaults(defineProps<TitleProps>(), { size: 'medium', level: 'h2' });
 

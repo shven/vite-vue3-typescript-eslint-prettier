@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import VueTag from '../Tag/VueTag.vue';
 import VueTitle from '../Title/VueTitle.vue';
-import { CardPropsType } from './Card.types';
+import type { CardPropsType } from './Card.types';
 withDefaults(defineProps<CardPropsType>(), { title: 'Title', subTitle: 'Sub title', image: 'default' });
 </script>
 
