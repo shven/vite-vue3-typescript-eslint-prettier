@@ -2,7 +2,7 @@
 import VueTag from '../Tag/VueTag.vue';
 import VueTitle from '../Title/VueTitle.vue';
 import type { CardPropsType } from './Card.types';
-withDefaults(defineProps<CardPropsType>(), { title: 'Title', subTitle: 'Sub title', image: 'default' });
+withDefaults(defineProps<CardPropsType>(), { title: 'Title', image: 'default' });
 </script>
 
 <template>
@@ -12,7 +12,7 @@ withDefaults(defineProps<CardPropsType>(), { title: 'Title', subTitle: 'Sub titl
             <VueTitle :label="title" size="small" />
             <VueTag :text="tag" />
         </header>
-        <p>{{ subTitle }}</p>
+        <p v-if="subTitle">{{ subTitle }}</p>
     </article>
 </template>
 

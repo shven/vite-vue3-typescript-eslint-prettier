@@ -1,6 +1,6 @@
 export type CardPropsType = {
     title: string;
-    subTitle: string;
+    subTitle?: string;
     tag?: string;
     image: string;
 };
