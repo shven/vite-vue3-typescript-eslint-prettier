@@ -3,6 +3,7 @@ import VueCard from '@/components/Card/VueCard.vue';
 import VueContainer from '@/components/Container/VueContainer.vue';
 import VueTitle from '@/components/Title/VueTitle.vue';
 import useApi from '@/composables/useApi';
+
 const { photos, error, loading } = useApi('https://jsonplaceholder.typicode.com/photos');
 </script>
 <template>

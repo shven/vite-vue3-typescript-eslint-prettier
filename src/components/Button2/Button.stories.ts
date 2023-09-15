@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 
 import Button from './VueButton.vue';
-import { buttonStyles, buttonSizes } from '@/constants';
+import { buttonStyles, buttonSizes } from './Button.constants';
 
 // More on how to set up stories at: https://storybook.js.org/docs/vue/writing-stories/introduction
 const meta = {

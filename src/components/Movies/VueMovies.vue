@@ -3,6 +3,7 @@ import VueCard from '@/components/Card/VueCard.vue';
 import VueContainer from '@/components/Container/VueContainer.vue';
 import VueTitle from '@/components/Title/VueTitle.vue';
 import { useMovieStore } from '@/stores/movie';
+
 const store = useMovieStore();
 store.fetchData();
 </script>

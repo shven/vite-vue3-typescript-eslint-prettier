@@ -1,16 +1,17 @@
 <script setup lang="ts">
 import VueContainer from '@/components/Container/VueContainer.vue';
+import { routes } from '@/router/router.constants';
+
+const pages = routes.filter((route) => route.path.split('/').length === 2);
 </script>
 <template>
     <div class="header">
         <VueContainer>
             <div class="header__content">
                 <nav class="header__nav">
-                    <RouterLink to="/">Home</RouterLink>
-                    <RouterLink to="/about">About</RouterLink>
-                    <RouterLink to="/components">Components</RouterLink>
-                    <RouterLink to="/movies">Movies</RouterLink>
-                    <RouterLink to="/photos">Photos</RouterLink>
+                    <RouterLink v-for="page in pages" :key="page.name" :to="page.path">
+                        {{ page.meta?.title ?? '' }}
+                    </RouterLink>
                 </nav>
             </div>
         </VueContainer>

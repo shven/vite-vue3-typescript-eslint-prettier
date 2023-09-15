@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import VueButton from '@/components/Button/VueButton.vue';
+import VueButton from '@/components/Button2/VueButton.vue';
 import VueTitle from '@/components/Title/VueTitle.vue';
 import { useCounterStore } from '@/stores/counter';
 import { onMounted, onUnmounted } from 'vue';

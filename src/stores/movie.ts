@@ -1,15 +1,15 @@
-import type { Movie } from '@/types';
+import type { MovieType } from '@/components/Movies/Movies.types';
 import { defineStore } from 'pinia';
 import { computed, ref } from 'vue';
 
 export const useMovieStore = defineStore('movie', () => {
-    const data = ref<Movie[]>([]);
+    const data = ref<MovieType[]>([]);
     const error = ref<string | null>(null);
     const loading = ref(false);
     const searchTitle = ref('');
 
     const movies = computed(() => {
-        const m = data.value as Movie[];
+        const m = data.value as MovieType[];
         if (searchTitle.value) {
             return m.filter((movie) => movie.title.toLowerCase().includes(searchTitle.value.toLowerCase()));
         } else {

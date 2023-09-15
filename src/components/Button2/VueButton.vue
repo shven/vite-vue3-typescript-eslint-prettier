@@ -5,9 +5,8 @@
 </template>
 
 <script lang="ts" setup>
-import { buttonSizes, buttonStyles } from '@/constants';
-import type { ButtonPropsType } from '@/types';
 import { computed } from 'vue';
+import { type ButtonPropsType, buttonSizes, buttonStyles } from './Button.constants';
 
 const props = withDefaults(defineProps<ButtonPropsType>(), { size: buttonSizes[0], type: buttonStyles[0] });
 

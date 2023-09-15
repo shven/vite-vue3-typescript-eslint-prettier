@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { defineAsyncComponent } from 'vue';
-import { type IconType } from './IconTypes';
+import type { IconType } from './Icon.types';
 const props = withDefaults(defineProps<IconType>(), { name: 'cart', size: 'medium' });
 const icon = defineAsyncComponent(() => import(`../../assets/icons/optimised/${props.name}.svg`));
 </script>

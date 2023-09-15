@@ -3,7 +3,7 @@ import VueCodeBlock from '@/components/CodeBlock/VueCodeBlock.vue';
 import VueContainer from '@/components/Container/VueContainer.vue';
 import { iconSizes } from '@/components/Icon/Icon.constants';
 import { iconNames } from '@/components/Icon/Icon.constants.generated';
-import type { IconNameType, IconSizeType } from '@/components/Icon/IconTypes';
+import type { IconSizeType, IconNameType } from '@/components/Icon/Icon.types';
 import VueIcon from '@/components/Icon/VueIcon.vue';
 import VueTitle from '@/components/Title/VueTitle.vue';
 import { ref, type Ref } from 'vue';

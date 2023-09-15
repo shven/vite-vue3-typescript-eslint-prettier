@@ -1,27 +1,28 @@
-import type { Movie, Photo } from '@/types';
+import type { MovieType } from '@/components/Movies/Movies.types';
+import type { PhotoType } from '@/components/Photos/Photos.types';
 import { computed, onMounted, ref, type ComputedRef, type Ref } from 'vue';
 
 export default (
     url: string
 ): {
-    data: Ref<Movie[] | Photo[]>;
+    data: Ref<MovieType[] | PhotoType[]>;
     error: Ref<string | null>;
     loading: Ref<boolean>;
-    photos: ComputedRef<Photo[]>;
-    movies: ComputedRef<Movie[]>;
+    photos: ComputedRef<PhotoType[]>;
+    movies: ComputedRef<MovieType[]>;
     search: (title: string) => void;
 } => {
-    const data = ref<Movie[] | Photo[]>([]);
+    const data = ref<MovieType[] | PhotoType[]>([]);
     const error = ref<string | null>(null);
     const loading = ref(false);
     const searchTitle = ref('');
 
     const photos = computed(() => {
-        return data.value as Photo[];
+        return data.value as PhotoType[];
     });
 
     const movies = computed(() => {
-        const m = data.value as Movie[];
+        const m = data.value as MovieType[];
         if (searchTitle.value) {
             return m.filter((movie) => movie.title.toLowerCase().includes(searchTitle.value.toLowerCase()));
         } else {
@@ -43,9 +44,9 @@ export default (
             }
             const jsonData = await response.json();
             if (jsonData[0]?.posterurl) {
-                data.value = jsonData as Movie[];
+                data.value = jsonData as MovieType[];
             } else if (jsonData[0]?.albumId) {
-                data.value = jsonData as Photo[];
+                data.value = jsonData as PhotoType[];
             } else {
                 throw new Error('Something went wrong');
             }
