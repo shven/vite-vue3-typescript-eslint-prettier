@@ -1,20 +1,36 @@
 import type { MovieType } from '@/components/Movies/Movies.types';
 import { defineStore } from 'pinia';
-import { computed, ref } from 'vue';
+import { computed, ref, type Ref } from 'vue';
 
 export const useMovieStore = defineStore('movie', () => {
     const data = ref<MovieType[]>([]);
     const error = ref<string | null>(null);
     const loading = ref(false);
+
+    const sortBy: Ref<'date' | 'rating'> = ref('rating');
     const searchTitle = ref('');
+    const searchGenre = ref('All');
 
     const movies = computed(() => {
         const m = data.value as MovieType[];
-        if (searchTitle.value) {
-            return m.filter((movie) => movie.title.toLowerCase().includes(searchTitle.value.toLowerCase()));
-        } else {
-            return m;
-        }
+        const t = searchTitle.value.toLowerCase();
+        const g = searchGenre.value.toLowerCase();
+
+        return m
+            .filter((movie) => {
+                const titleMatch = t ? movie.title.toLowerCase().includes(t) : true;
+                const genreMatch = g && g !== 'all' ? movie.genres.includes(g) : true;
+                return titleMatch && genreMatch;
+            })
+            .sort((a, b) =>
+                sortBy.value === 'date'
+                    ? new Date(b.releaseDate).getTime() - new Date(a.releaseDate).getTime()
+                    : b.imdbRating - a.imdbRating
+            );
+    });
+
+    const genres = computed(() => {
+        return [...['All'], ...Array.from(new Set(movies.value.map((movie) => movie.genres).flat()))];
     });
 
     async function fetchData(): Promise<void> {
@@ -37,5 +53,10 @@ export const useMovieStore = defineStore('movie', () => {
         }
     }
 
-    return { movies, loading, error, fetchData, searchTitle };
+    function clearFilters(): void {
+        searchTitle.value = '';
+        searchGenre.value = 'All';
+    }
+
+    return { movies, loading, error, fetchData, clearFilters, searchTitle, searchGenre, genres, sortBy };
 });

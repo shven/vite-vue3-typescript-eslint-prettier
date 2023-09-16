@@ -6,7 +6,6 @@ export type MovieType = {
     contentRating: string;
     duration: string;
     releaseDate: string;
-    averageRating: number;
     storyline: string;
     actors: string[];
     imdbRating: number;
