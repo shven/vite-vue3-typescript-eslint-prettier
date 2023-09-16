@@ -31,7 +31,7 @@ watch(toggleSearch, () => {
                 </select>
             </p>
 
-            <VueTitle :label="`Search by ${store.sortBy}`" level="h2" size="medium" />
+            <VueTitle :label="`Sort by ${store.sortBy}`" level="h2" size="medium" />
             <p>
                 <VueFormSwitch
                     v-model="store.sortBy"
