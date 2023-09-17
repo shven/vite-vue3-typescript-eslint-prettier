@@ -16,7 +16,6 @@ export const useMovieStore = defineStore('movie', () => {
         const m = data.value as MovieType[];
         const t = searchTitle.value.toLowerCase();
         const g = searchGenre.value;
-        console.log(g, 'genre');
 
         return m
             .filter((movie) => {

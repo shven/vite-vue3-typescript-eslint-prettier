@@ -27,7 +27,15 @@ export const routes = [
         meta: {
             title: 'Icons'
         },
-        component: (): Promise<Component> => import('@/components/Icons/VueIcons.vue')
+        component: (): Promise<Component> => import('@/components/Styleguide/VueStyleguideIcons.vue')
+    },
+    {
+        path: '/styleguide/forms',
+        name: 'forms',
+        meta: {
+            title: 'Forms'
+        },
+        component: (): Promise<Component> => import('@/components/Styleguide/VueStyleguideForms.vue')
     },
     {
         path: '/movies',
