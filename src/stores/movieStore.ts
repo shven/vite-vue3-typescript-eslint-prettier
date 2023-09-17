@@ -6,20 +6,22 @@ export const useMovieStore = defineStore('movie', () => {
     const data = ref<MovieType[]>([]);
     const error = ref<string | null>(null);
     const loading = ref(false);
+    const all = 'All';
 
     const sortBy: Ref<'date' | 'rating'> = ref('rating');
     const searchTitle = ref('');
-    const searchGenre = ref('All');
+    const searchGenre = ref(all);
 
     const movies = computed(() => {
         const m = data.value as MovieType[];
         const t = searchTitle.value.toLowerCase();
-        const g = searchGenre.value.toLowerCase();
+        const g = searchGenre.value;
+        console.log(g, 'genre');
 
         return m
             .filter((movie) => {
                 const titleMatch = t ? movie.title.toLowerCase().includes(t) : true;
-                const genreMatch = g && g !== 'all' ? movie.genres.includes(g) : true;
+                const genreMatch = g && g !== all ? movie.genres.includes(g) : true;
                 return titleMatch && genreMatch;
             })
             .sort((a, b) =>
@@ -30,7 +32,7 @@ export const useMovieStore = defineStore('movie', () => {
     });
 
     const genres = computed(() => {
-        return [...['All'], ...Array.from(new Set(movies.value.map((movie) => movie.genres).flat()))];
+        return [...[all], ...Array.from(new Set(data.value.map((movie) => movie.genres).flat()))];
     });
 
     async function fetchData(): Promise<void> {

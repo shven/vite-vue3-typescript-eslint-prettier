@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import VueButton from '@/components/Button/VueButton.vue';
 import VueTitle from '@/components/Title/VueTitle.vue';
-import { useCounterStore } from '@/stores/counter';
+import { useCounterStore } from '@/stores/counterStore';
 import { onMounted, onUnmounted } from 'vue';
 
 const store = useCounterStore();

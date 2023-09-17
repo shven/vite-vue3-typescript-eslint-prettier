@@ -3,7 +3,7 @@ import VueCard from '@/components/Card/VueCard.vue';
 import VueContainer from '@/components/Container/VueContainer.vue';
 import VueFormSwitch from '@/components/FormSwitch/VueFormSwitch.vue';
 import VueTitle from '@/components/Title/VueTitle.vue';
-import { useMovieStore } from '@/stores/movie';
+import { useMovieStore } from '@/stores/movieStore';
 import { ref, watch } from 'vue';
 
 const store = useMovieStore();
@@ -38,6 +38,8 @@ watch(toggleSearch, () => {
                     name="sort"
                     :options="{ date: 'Release date', rating: 'Rating' }" />
             </p>
+
+            <!-- Movies list -->
             <div v-if="store.loading">Loading...</div>
             <div v-else-if="store.error">{{ store.error }}</div>
             <div v-else-if="store.movies" class="movies__cards">
