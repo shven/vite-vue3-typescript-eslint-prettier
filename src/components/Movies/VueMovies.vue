@@ -43,13 +43,13 @@ watch(toggleSearch, () => {
             <div v-if="store.loading">Loading...</div>
             <div v-else-if="store.error">{{ store.error }}</div>
             <div v-else-if="store.movies" class="movies__cards">
-                <VueCard
-                    v-for="movie in store.movies"
-                    :key="movie.id"
-                    :image="movie.posterurl"
-                    :title="movie.title"
-                    :sub-title="movie.genres.join(', ') + ' ' + movie.releaseDate + ' ' + movie.imdbRating"
-                    :tag="movie.year" />
+                <RouterLink v-for="movie in store.movies" :key="movie.id" :to="`/movies/${movie.id}`">
+                    <VueCard
+                        :image="movie.posterurl"
+                        :title="movie.title"
+                        :sub-title="movie.genres.join(', ') + ' ' + movie.releaseDate + ' ' + movie.imdbRating"
+                        :tag="movie.year" />
+                </RouterLink>
             </div>
         </VueContainer>
     </div>

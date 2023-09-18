@@ -54,10 +54,20 @@ export const useMovieStore = defineStore('movie', () => {
         }
     }
 
+    function getMovieById(id: string | string[] | undefined): MovieType | null {
+        const mid: string | undefined = id && Array.isArray(id) ? id[0] : id ?? '';
+
+        if (mid) {
+            return data.value.find((movie) => movie.id === parseInt(mid, 10)) ?? null;
+        }
+
+        return null;
+    }
+
     function clearFilters(): void {
         searchTitle.value = '';
         searchGenre.value = 'All';
     }
 
-    return { movies, loading, error, fetchData, clearFilters, searchTitle, searchGenre, genres, sortBy };
+    return { fetchData, clearFilters, getMovieById, movies, loading, error, searchTitle, searchGenre, genres, sortBy };
 });

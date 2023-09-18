@@ -46,6 +46,14 @@ export const routes = [
         component: (): Promise<Component> => import('@/components/Movies/VueMovies.vue')
     },
     {
+        path: '/movies/:id',
+        name: 'movie',
+        meta: {
+            title: 'Movie detail'
+        },
+        component: (): Promise<Component> => import('@/components/Movie/VueMovie.vue')
+    },
+    {
         path: '/photos',
         name: 'photos',
         meta: {
