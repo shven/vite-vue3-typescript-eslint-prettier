@@ -1,0 +1,53 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`VueHeader.vue > Match snapshot 1`] = `
+<div
+  class="header"
+  data-v-a1588586=""
+>
+  <div
+    class="container"
+    data-v-a1588586=""
+    data-v-cbb0d1af=""
+  >
+    
+    <div
+      class="header__content"
+      data-v-a1588586=""
+    >
+      <nav
+        class="header__nav"
+        data-v-a1588586=""
+      >
+        
+        <routerlink
+          data-v-a1588586=""
+          to="/"
+        >
+          Home
+        </routerlink>
+        <routerlink
+          data-v-a1588586=""
+          to="/styleguide"
+        >
+          Styleguide
+        </routerlink>
+        <routerlink
+          data-v-a1588586=""
+          to="/movies"
+        >
+          Movies
+        </routerlink>
+        <routerlink
+          data-v-a1588586=""
+          to="/photos"
+        >
+          Photos
+        </routerlink>
+        
+      </nav>
+    </div>
+    
+  </div>
+</div>
+`;

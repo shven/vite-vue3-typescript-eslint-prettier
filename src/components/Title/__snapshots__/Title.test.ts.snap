@@ -1,0 +1,10 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`VueTitle.vue > Match snapshot 1`] = `
+<h2
+  class="title title--medium"
+  data-v-a0ca2fca=""
+>
+  Title goes here
+</h2>
+`;

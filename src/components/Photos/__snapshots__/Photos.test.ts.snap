@@ -1,0 +1,29 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`VuePhotos.vue > Match snapshot 1`] = `
+<div
+  class="photos"
+  data-v-afbfae38=""
+>
+  <div
+    class="container"
+    data-v-afbfae38=""
+    data-v-cbb0d1af=""
+  >
+    
+    <h1
+      class="title title--large"
+      data-v-a0ca2fca=""
+      data-v-afbfae38=""
+    >
+      Photos
+    </h1>
+    <div
+      data-v-afbfae38=""
+    >
+      Loading...
+    </div>
+    
+  </div>
+</div>
+`;

@@ -5,6 +5,6 @@ export type ButtonSizeType = (typeof buttonSizes)[number] | string;
 export type ButtonStyleType = (typeof buttonStyles)[number] | string;
 export type ButtonPropsType = {
     label: string;
-    type: ButtonStyleType;
+    type?: ButtonStyleType;
     size?: ButtonSizeType;
 };

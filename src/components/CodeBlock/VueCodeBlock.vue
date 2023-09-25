@@ -12,7 +12,7 @@ async function copyToClipboard(): Promise<void> {
 
         setTimeout(() => {
             copied.value = false;
-        }, 1000);
+        }, 1500);
     } catch (err) {
         console.error('Failed to copy: ', err);
     }
@@ -20,12 +20,12 @@ async function copyToClipboard(): Promise<void> {
 </script>
 <template>
     <pre class="code-block">
-        <code ref="codeRef" class="code-block__code"><slot /></code>
-        <button v-if="!copied" class="code-block__button" @click="copyToClipboard">
+        <code ref="codeRef" class="code-block__code" data-test="slot"><slot /></code>
+        <button v-if="!copied" class="code-block__button" data-test="button"  @click="copyToClipboard">
             <VueIcon size="small" name="copy" />
             Copy
         </button>
-        <div v-if="copied" class="code-block__button" @click="copyToClipboard">
+        <div v-if="copied" class="code-block__button" data-test="status"  @click="copyToClipboard">
             <VueIcon size="small" name="check" />
             Copied
         </div>

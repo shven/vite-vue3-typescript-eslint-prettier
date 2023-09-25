@@ -1,0 +1,12 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`VueContainer.vue > Match snapshot 1`] = `
+<div
+  class="container"
+  data-v-cbb0d1af=""
+>
+  
+  Slot content goes here
+  
+</div>
+`;

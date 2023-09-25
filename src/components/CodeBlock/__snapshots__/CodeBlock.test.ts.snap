@@ -1,0 +1,44 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`VueCodeBlock.vue > Match snapshot 1`] = `
+<pre
+  class="code-block"
+  data-v-e6e8e1f5=""
+>
+          
+  <code
+    class="code-block__code"
+    data-test="slot"
+    data-v-e6e8e1f5=""
+  >
+    
+    Slot content goes here
+    
+  </code>
+  
+        
+  <button
+    class="code-block__button"
+    data-test="button"
+    data-v-e6e8e1f5=""
+  >
+    
+            
+    <div
+      class="icon icon--small"
+      data-v-836caaa4=""
+      data-v-e6e8e1f5=""
+    >
+      <!---->
+    </div>
+    
+            Copy
+        
+  </button>
+  
+        
+  <!--v-if-->
+  
+    
+</pre>
+`;

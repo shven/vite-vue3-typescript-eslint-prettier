@@ -2,7 +2,7 @@
 import VueTag from '@/components/Tag/VueTag.vue';
 import VueTitle from '@/components/Title/VueTitle.vue';
 import type { CardPropsType } from './Card.types';
-withDefaults(defineProps<CardPropsType>(), { title: 'Title', image: 'default' });
+withDefaults(defineProps<CardPropsType>(), { title: 'Title' });
 </script>
 
 <template>

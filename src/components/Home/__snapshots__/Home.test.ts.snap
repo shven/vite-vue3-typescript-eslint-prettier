@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`VueIcon.vue > Match snapshot 1`] = `
+<div>
+  <vue-container-stub />
+</div>
+`;

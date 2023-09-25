@@ -1,0 +1,10 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`VueTag.vue > Match snapshot 1`] = `
+<div
+  class="tag"
+  data-v-d15b973d=""
+>
+  tag text
+</div>
+`;
