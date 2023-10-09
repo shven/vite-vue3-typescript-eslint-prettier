@@ -60,5 +60,14 @@ export const routes = [
             title: 'Photos'
         },
         component: (): Promise<Component> => import('@/components/Photos/VuePhotos.vue')
+    },
+    // 404 page not found
+    {
+        path: '/:pathMatch(.*)*',
+        name: 'notfound',
+        component: (): Promise<Component> => import('@/components/NotFound/NotFound.vue'),
+        meta: {
+            title: 'Not found'
+        }
     }
 ] as const satisfies readonly RouteRecordRaw[];

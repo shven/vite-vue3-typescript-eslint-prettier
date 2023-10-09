@@ -1,4 +1,5 @@
 <script setup async lang="ts">
+import VueContainer from '@/components/Container/VueContainer.vue';
 import type { MovieType } from '@/components/Movies/Movies.types';
 import { useMovieStore } from '@/stores/movieStore';
 import { onBeforeMount, ref, type Ref } from 'vue';
@@ -14,6 +15,11 @@ onBeforeMount(async () => {
 });
 </script>
 <template>
-    <pre v-if="movie">{{ movie }}</pre>
-    <p v-else>error</p>
+    <VueContainer>
+        <pre v-if="movie">{{ movie }}</pre>
+        <p v-else>
+            Movie not found<br />
+            Go back to <RouterLink to="/movies">movies</RouterLink>
+        </p>
+    </VueContainer>
 </template>
