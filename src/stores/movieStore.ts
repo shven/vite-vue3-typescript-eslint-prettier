@@ -1,16 +1,28 @@
 import type { MovieType } from '@/components/Movies/Movies.types';
 import { defineStore } from 'pinia';
-import { computed, ref, type Ref } from 'vue';
+import { computed, ref, watch, type Ref } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
 
 export const useMovieStore = defineStore('movie', () => {
+    const route = useRoute();
+    const router = useRouter();
     const data = ref<MovieType[]>([]);
     const error = ref<string | null>(null);
     const loading = ref(false);
     const all = 'All';
 
     const sortBy: Ref<'date' | 'rating'> = ref('rating');
-    const searchTitle = ref('');
+    const searchTitle = ref(typeof route.query.search === 'string' ? route.query.search : ''); // use the search query param as default
     const searchGenre = ref(all);
+
+    // Update the search query param when the searchTitle model changes
+    watch(searchTitle, (search) => {
+        if (search) {
+            router.replace({ query: { ...route.query, search } });
+        } else {
+            router.replace({ query: { ...route.query, search: undefined } });
+        }
+    });
 
     const movies = computed(() => {
         const m = data.value as MovieType[];
