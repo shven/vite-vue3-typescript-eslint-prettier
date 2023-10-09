@@ -38,7 +38,7 @@ export const useMovieStore = defineStore('movie', () => {
         loading.value = true;
 
         try {
-            const response = await fetch('/movies.json');
+            const response = await fetch('https://tame-erin-pike-toga.cyclic.app/movies');
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
